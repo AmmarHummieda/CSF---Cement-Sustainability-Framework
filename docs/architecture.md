@@ -1,6 +1,6 @@
 # Architecture and implementation map
 
-The paper presents a transparent and traceable certification workflow for sustainable cement production. This repository maps that workflow into two Solidity contracts and a local runnable example. The contracts organise records and permissions for the main participants; the regulator coordinates the full sequence.
+The [paper](https://doi.org/10.1108/SASBE-08-2024-0291) presents a transparent and traceable certification workflow for sustainable cement production. Section 4.2 and Figure 3 describe the wider system architecture; Figures 4–7 set out registration, reporting, certification and auditing. This repository maps that workflow into two Solidity contracts and a local runnable example. The contracts organise records and permissions for the main participants; the regulator coordinates the full sequence.
 
 ## Roles and workflow
 

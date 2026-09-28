@@ -1,6 +1,6 @@
 # Cement Sustainability Framework prototype
 
-This repository accompanies *Blockchain-based certification of sustainable cement production*. It provides the Solidity implementation and a reproducible local walkthrough for the paper's certification workflow, organised around registration, reporting, auditing and certification.
+This repository accompanies [*Blockchain-based certification of sustainable cement production*](https://doi.org/10.1108/SASBE-08-2024-0291). It provides the Solidity implementation and a reproducible local walkthrough for the paper's certification workflow, organised around registration, reporting, auditing and certification.
 
 The framework is deliberately modular. The paper presents its registration, reporting, auditing and certification pattern as adaptable to other energy-intensive industries and regulatory settings.
 
@@ -15,14 +15,16 @@ The framework is deliberately modular. The paper presents its registration, repo
 
 The regulator deploys both contracts and coordinates the workflow: approving registration, overseeing reporting and calculation, opening audit requests, selecting an applicant, reviewing the audit outcome, and issuing and approving certificates. `SCSC` and `AuditSC` retain their own state, so the runnable example follows the sequence through the regulator's operating procedure.
 
+This is a simplified map of the repository's contract interactions. For the full system architecture and stage-by-stage sequences, see Section 4.2 and Figures 3–7 of the [article](https://doi.org/10.1108/SASBE-08-2024-0291). The dotted arrows show the supporting document uploads to IPFS in that wider workflow.
+
 ```mermaid
 flowchart LR
     M[Manufacturer account] -->|register, connect, report| S[SCSC]
     R[Regulator account] -->|approve, calculate, issue and approve certificate| S
     R -->|open request, select auditor, review result| A[AuditSC]
     I[Auditor account] -->|apply, submit report| A
-    M -. IPFS identifiers .-> O[Registration and reporting material]
-    I -. IPFS identifier .-> O
+    M -. upload registration and reporting material .-> O[IPFS / decentralised storage]
+    I -. upload audit report .-> O
 ```
 
 The paper's wider architecture includes CEMS, smart meters, oracles and IPFS. This Solidity snapshot models the on-chain records and calls: it receives IPFS identifiers as strings and records a manufacturer sensor-connection status. Equipment integration, oracle operation and IPFS-content handling sit in the surrounding application and operating process.
