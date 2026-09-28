@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the related research article."
+title: "Cement Sustainability Framework prototype"
+type: software
+repository-code: "https://github.com/AmmarHummieda/CSF---Cement-Sustainability-Framework"
+commit: "6c6444005482fb11d86fa184786fa623cc23b128"
+authors:
+  - family-names: Hummieda
+    given-names: Ammar
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Hummieda
+      given-names: Ammar
+    - family-names: Moawad
+      given-names: Karim
+    - family-names: Salah
+      given-names: Khaled
+    - family-names: Omar
+      given-names: Mohammed
+    - family-names: Mayyas
+      given-names: Ahmad
+  title: "Blockchain-based certification of sustainable cement production"
+  journal: "Smart and Sustainable Built Environment"
+  year: 2025
+  date-published: 2025-11-20
+  doi: "10.1108/SASBE-08-2024-0291"

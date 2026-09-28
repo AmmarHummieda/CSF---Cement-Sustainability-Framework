@@ -1,0 +1,26 @@
+{
+  "name": "csf-cement-sustainability-framework",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Reproducible local compilation and behavioural tests for the published CSF contracts.",
+  "engines": {
+    "node": ">=24.19.0 <25"
+  },
+  "scripts": {
+    "check:source": "node scripts/check-source-integrity.js",
+    "compile": "node scripts/compile.js",
+    "test": "node --test --test-concurrency=1 test/baseline-flow.test.js test/recorded-behaviour.test.js",
+    "demo": "node scripts/demo.js",
+    "verify": "node scripts/check-source-integrity.js && node scripts/compile.js && node --test --test-concurrency=1 test/baseline-flow.test.js test/recorded-behaviour.test.js"
+  },
+  "devDependencies": {
+    "ethers": "6.17.0",
+    "hardhat": "3.18.0",
+    "solc": "0.8.26"
+  },
+  "overrides": {
+    "solc": {
+      "tmp": "0.2.7"
+    }
+  }
+}

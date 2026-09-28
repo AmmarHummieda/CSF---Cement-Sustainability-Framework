@@ -1,0 +1,2 @@
+# Preserve the published contract's CRLF bytes: the source-integrity check hashes the raw file.
+CSF_vLatest.sol -text
